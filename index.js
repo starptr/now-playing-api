@@ -2,6 +2,7 @@ require("dotenv").config();
 const SpotifyWebApi = require("spotify-web-api-node");
 const http = require("http");
 const express = require("express");
+const _ = require("lodash");
 const NodeCache = require("node-cache");
 const cache = new NodeCache({
 	stdTTL: 1,
@@ -36,6 +37,7 @@ var nowPlayingData;
 					.catch(err => {
 						console.error("Can't get current playback:", err);
 					});
+				if (_.isEmpty(nowPlayingData)) nowPlayingData = { is_not_playing: true };
 				cache.set("isFresh", true);
 			}
 			res.json(nowPlayingData);
