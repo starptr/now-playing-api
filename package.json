@@ -1,6 +1,6 @@
 {
 	"name": "now-playing-api",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Real-time now-playing api that avoids rate limits.",
 	"main": "index.js",
 	"scripts": {
