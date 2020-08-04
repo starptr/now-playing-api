@@ -107,7 +107,7 @@ var nowPlayingData;
 	};
 	setInterval(refresher, 1000 * 60 * 5);
 
-	let server = app.listen(process.env.PORT || 3000, () => {
+	let server = app.listen(process.env.PORT || 80, () => {
 		console.log("Server listening to port 3000");
 	});
 })();
