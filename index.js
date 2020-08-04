@@ -73,7 +73,7 @@ var nowPlayingData;
 				await spotifyApi
 					.getMe()
 					.then(data => {
-						if (data.body.email === "yuyu.nishida@gmail.com") {
+						if (data.body.email === process.env.EMAIL_EXPECTED) {
 							console.log("Expected email!");
 							res.send("Code received!");
 						} else {
