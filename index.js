@@ -2,6 +2,7 @@ require("dotenv").config();
 const SpotifyWebApi = require("spotify-web-api-node");
 const http = require("http");
 const express = require("express");
+const cors = require("cors");
 const _ = require("lodash");
 const NodeCache = require("node-cache");
 const cache = new NodeCache({
@@ -9,6 +10,7 @@ const cache = new NodeCache({
 });
 
 let app = express();
+app.use(cors());
 
 var isTokenValid = false;
 var nowPlayingData;
