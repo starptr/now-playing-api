@@ -6,7 +6,7 @@ const cors = require("cors");
 const _ = require("lodash");
 const NodeCache = require("node-cache");
 const cache = new NodeCache({
-	stdTTL: 1,
+	stdTTL: 0.5,
 });
 
 let app = express();
