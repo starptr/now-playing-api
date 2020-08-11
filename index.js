@@ -10,6 +10,7 @@ const cache = new NodeCache({
 });
 
 let app = express();
+app.enable("strict routing");
 app.use(cors());
 
 var isTokenValid = false;
