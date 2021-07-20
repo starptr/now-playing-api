@@ -1,6 +1,7 @@
 FROM node:12 AS build
-WORKDIR /
+WORKDIR /root/
 COPY package.json yarn.lock ./
-RUN yarn install --production
-COPY ./bin .
-CMD ["node", "./now-playing-api.js"]
+RUN yarn install --frozen-lockfile
+COPY . .
+RUN yarn build
+CMD ["yarn", "deploy"]
